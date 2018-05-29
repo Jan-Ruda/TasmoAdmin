@@ -108,6 +108,12 @@
 							"USER_CONFIG"
 						); ?>
 					</option>
+					<option value='CZ' <?php echo $config[ "update_automatic_lang" ] == "CZ" ? "selected=\selected\""
+						: ""; ?>><?php echo __(
+							"CONFIG_AUTOMATIC_LANGAUGE_CZ",
+							"USER_CONFIG"
+						); ?>
+					</option>
 					<option value='DE' <?php echo $config[ "update_automatic_lang" ] == "DE" ? "selected=\selected\""
 						: ""; ?>><?php echo __(
 							"CONFIG_AUTOMATIC_LANGAUGE_DE",

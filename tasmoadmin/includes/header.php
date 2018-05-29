@@ -236,6 +236,7 @@
 
 			<div class='my-2 my-sm-0 language-switch-holder'>
 				<select name='language-switch' id='language-switch' class='custom-select'>
+                                        <option value='cs' <?php echo $lang == "cs" ? "selected=\"selected\"" : ""; ?>>CZ</option>
 					<option value='de' <?php echo $lang == "de" ? "selected=\"selected\"" : ""; ?>>DE</option>
 					<option value='en' <?php echo $lang == "en" ? "selected=\"selected\"" : ""; ?>>EN</option>
 					<option value='es' <?php echo $lang == "es" ? "selected=\"selected\"" : ""; ?>>ES</option>
