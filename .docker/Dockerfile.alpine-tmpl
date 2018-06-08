@@ -20,19 +20,22 @@ LABEL \
     org.label-schema.vcs-ref=${BUILD_REF} \
     org.label-schema.vcs-url="https://github.com/reloxx13/TasmoAdmin"
 
+# Environment variables
+
 # Setup Qemu
 ARG QEMU_ARCH
 COPY tmp/qemu-${QEMU_ARCH}-static /usr/bin/qemu-${QEMU_ARCH}-static
 
 # Install base system
 ARG BUILD_ARCH=arm32v6
-RUN apk add --no-cache --virtual .build-dependencies \
+RUN \
+    apk add --no-cache --virtual .build-dependencies \
         tar=1.29-r1 \
     \
     && apk add --no-cache \
         apk-tools=2.9.1-r2 \
         bash=4.4.19-r1 \
-        busybox=1.27.2-r8 \
+        busybox=1.27.2-r10 \
         ca-certificates=20171114-r0 \
         curl=7.60.0-r1 \
         musl-utils=1.1.18-r3 \
@@ -53,6 +56,7 @@ RUN apk add --no-cache --virtual .build-dependencies \
         | tar zxf - -C / \
     \
     && apk del --purge .build-dependencies \
+    \
     && rm -f -r /tmp/*
 
 # Copy root filesystem
